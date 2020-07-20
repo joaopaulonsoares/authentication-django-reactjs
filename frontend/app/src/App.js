@@ -1,8 +1,28 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 
+import LoginPage from './containers/LoginPage'
+import DashboardPage from './containers/DashboardPage'
+
 function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <LoginPage></LoginPage>
+        </Route>
+        <Route exact path="/dashboard">
+          <DashboardPage></DashboardPage>
+        </Route>
+        
+      </Switch>
+    </Router>
+  );
+}
+
+function InitialPage(){
   return (
     <div className="App">
       <header className="App-header">
@@ -24,3 +44,5 @@ function App() {
 }
 
 export default App;
+
+
